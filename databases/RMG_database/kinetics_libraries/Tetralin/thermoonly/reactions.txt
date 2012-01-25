@@ -1,0 +1,61 @@
+Unit:
+A: mol/cm3/s
+E: kcal/mol
+
+Reactions:
+
+init(3) => SPC(5)+SPC(5)+C3H6(4)                       2.000e-05 	  0.00 	  0.00 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tetOOJ1(6)+tetOOJ1(6) => SPC(13)+SPC(12)+O2(2)         5.730e+13 	  0.00 	  5.80 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tetOOJ2(8)+tetOOJ2(8) => SPC(10)+SPC(11)+O2(2)         1.260e+12 	  0.00 	  5.29 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tetOOJ1(6)+tetOOH1(7) = tetOOH1(7)+SPC(13)+HOJ(14)     1.130e-13 	  7.20 	  2.91 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tetOOJ1(6)+tetOOH2(9) = tetOOH1(7)+SPC(10)+HOJ(14)     1.130e-13 	  7.20 	  2.91 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tetOOJ2(8)+tetOOH1(7) = tetOOH2(9)+SPC(13)+HOJ(14)     1.130e-13 	  7.20 	  2.91 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tetOOJ2(8)+tetOOH2(9) = tetOOH2(9)+SPC(10)+HOJ(14)     1.130e-13 	  7.20 	  2.91 		0.0	0.0	0.0	//Seed Mechanism: pure_tetralin   
+tet(1)+tetOOJ2(8) = SPC(5)+tetOOH2(9)                  5.320e+11 	  0.00 	  11.30 		0.0	0.0	0.0	//H_Abstraction exact:   [ C/H2/Cb , O_rad/NonDeO ]
+tet(1)+tetOOJ1(6) = SPC(5)+tetOOH1(7)                  5.320e+11 	  0.00 	  11.30 		0.0	0.0	0.0	//H_Abstraction exact:   [ C/H2/Cb , O_rad/NonDeO ]
+O2(2)+SPC(5) = tetOOJ1(6)                              4.590e+11 	  0.00 	 -0.38 		0.0	0.0	0.0	//R_Recombination exact:   [ O2_birad , C_rad/H/Cb/Cs ]
+SPC(17)+tet(1) = tet(1)+SPC(5)                         3.872e+02 	  2.96 	  6.79 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ C_rad/H/NonDeC , C/H2/Cb ] Diffusion factor = 1.00, rate = 1.23e+05, Keq = 8.83e+05, at T = 338K.
+SPC(17)+tetOOH2(9) = tet(1)+tetOOJ2(8)                 2.510e-11 	  6.77 	 -8.60 		0.0	0.0	0.0	//H_Abstraction exact:   [ C_rad/H/NonDeC , ROOH_sec ] Diffusion factor = 0.849, rate = 1.02e+12, Keq = 2.01e+05, at T = 338K.
+SPC(17)+tetOOH1(7) = tet(1)+tetOOJ1(6)                 1.587e-07 	  5.47 	 -3.20 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ C_rad/H/NonDeC , O/H/NonDeO ] Diffusion factor = 1.00, rate = 1.26e+09, Keq = 2.01e+05, at T = 338K.
+SPC(17)+O2(2) = tetOOJ2(8)                             7.540e+12 	  0.00 	  0.00 		0.0	0.0	0.0	//R_Recombination estimate: (Average:)  [ C_rad/H/NonDeC , O2_birad ]
+SPC(17)+HOJ(14) = SPC(11)                              1.000e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//R_Recombination estimate: (Average:)  [ C_rad/H/NonDeC , O_pri_rad ]
+SPC(17) = SPC(5)                                       6.820e+09 	  0.73 	  30.50 		0.0	0.0	0.0	//intra_H_migration exact:   [ Others-R3H_SS , C_rad_out_H/NonDeC , Cs_H_out_H/OneDe ]
+DUP
+SPC(17) = SPC(5)                                       4.056e+08 	  1.22 	  34.49 		0.0	0.0	0.0	//intra_H_migration estimate: (Average:)  [ R5H_SSMS , C_rad_out_H/NonDeC , Cs_H_out_H/NonDeC ]
+DUP
+SPC(17) = SPC(5)                                       1.682e+10 	  0.35 	  29.90 		0.0	0.0	0.0	//intra_H_migration exact:   [ Others-R2H_S , C_rad_out_H/NonDeC , Cs_H_out_H/OneDe ]
+DUP
+SPC(17)+HO2J(16) = tet(1)+O2(2)                        1.750e+10 	  0.00 	 -3.28 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ C_rad/H/NonDeC , Orad_O_H ] Diffusion factor = 0.762, rate = 1.75e+12, Keq = 8.28e+26, at T = 338K.
+SPC(5)+HO2J(16) = tet(1)+O2(2)                         1.750e+10 	  0.00 	 -3.28 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ C_rad/H/OneDeC , Orad_O_H ] Diffusion factor = 0.762, rate = 1.75e+12, Keq = 9.38e+20, at T = 338K.
+tetOOJ1(6)+HO2J(16) = tetOOH1(7)+O2(2)                 1.750e+10 	  0.00 	 -3.28 		0.0	0.0	0.0	//H_Abstraction exact:   [ O_rad/NonDeO , Orad_O_H ] Diffusion factor = 0.764, rate = 1.75e+12, Keq = 4.13e+21, at T = 338K.
+tetOOJ2(8)+HO2J(16) = tetOOH2(9)+O2(2)                 1.750e+10 	  0.00 	 -3.28 		0.0	0.0	0.0	//H_Abstraction exact:   [ O_rad/NonDeO , Orad_O_H ] Diffusion factor = 0.764, rate = 1.75e+12, Keq = 4.13e+21, at T = 338K.
+HO2J(16)+SPC(5) = tetOOH1(7)                           1.000e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//R_Recombination estimate: (Average:)  [ O_rad/NonDe , C_rad/H/Cb/Cs ]
+HO2J(16)+SPC(17) = tetOOH2(9)                          6.030e+12 	  0.00 	  0.00 		0.0	0.0	0.0	//R_Recombination exact:   [ O_rad/NonDe , C_rad/H/NonDeC ]
+O2(2)+SPC(5) = HO2J(16)+C10H10(92)                     1.833e+13 	  0.00 	  14.85 		0.0	0.0	0.0	//Disproportionation exact:   [ O2_birad , C/H2/Nd_Csrad ] Diffusion factor = 1.00, rate = 4.58e+03, Keq = 1.51e+07, at T = 338K.
+O2(2)+SPC(17) = HO2J(16)+C10H10(92)                    2.199e+13 	 -0.06 	  2.47 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ O2_birad , C/H2/De_Csrad ] Diffusion factor = 0.950, rate = 3.72e+11, Keq = 1.33e+13, at T = 338K.
+SPC(17)+SPC(5) = tet(1)+C10H10(92)                     1.026e+14 	 -0.35 	  0.00 		0.0	0.0	0.0	//Disproportionation exact:   [ C_rad/H/NonDeC , C/H2/Nd_Csrad ] Diffusion factor = 0.337, rate = 4.50e+12, Keq = 1.25e+34, at T = 338K.
+tetOOJ2(8)+SPC(17) = tetOOH2(9)+C10H10(92)             1.099e+13 	 -0.06 	  2.47 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ O_rad/NonDeO , C/H2/De_Csrad ] Diffusion factor = 0.972, rate = 1.90e+11, Keq = 5.49e+34, at T = 338K.
+tetOOJ1(6)+SPC(17) = tetOOH1(7)+C10H10(92)             1.099e+13 	 -0.06 	  2.47 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ O_rad/NonDeO , C/H2/De_Csrad ] Diffusion factor = 0.972, rate = 1.90e+11, Keq = 5.49e+34, at T = 338K.
+SPC(17)+SPC(17) = tet(1)+C10H10(92)                    1.099e+13 	 -0.06 	  2.47 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ C_rad/H/NonDeC , C/H2/De_Csrad ] Diffusion factor = 0.972, rate = 1.90e+11, Keq = 1.10e+40, at T = 338K.
+SPC(5)+SPC(5) = C10H10(92)+tet(1)                      5.130e+13 	 -0.35 	  0.00 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ C/H2/Nd_Csrad , C_rad/H/OneDeC ]
+SPC(5)+tetOOJ1(6) = C10H10(92)+tetOOH1(7)              2.410e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ C/H2/Nd_Csrad , O_rad/NonDeO ]
+SPC(5)+tetOOJ2(8) = C10H10(92)+tetOOH2(9)              2.410e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ C/H2/Nd_Csrad , O_rad/NonDeO ]
+SPC(17)+H2O2(109) = tet(1)+HO2J(16)                    1.141e+00 	  3.28 	  0.88 		0.0	0.0	0.0	//H_Abstraction exact:   [ C_rad/H/NonDeC , H2O2 ] Diffusion factor = 1.00, rate = 3.11e+07, Keq = 2.39e+05, at T = 338K.
+tet(1)+HO2J(16) = SPC(5)+H2O2(109)                     5.320e+11 	  0.00 	  11.30 		0.0	0.0	0.0	//H_Abstraction exact:   [ C/H2/Cb , O_rad/NonDeO ] Diffusion factor = 1.00, rate = 2.62e+04, Keq = 3.70, at T = 338K.
+tetOOJ1(6)+H2O2(109) = tetOOH1(7)+HO2J(16)             1.840e-01 	  3.96 	  6.63 		0.0	0.0	0.0	//H_Abstraction exact:   [ O_rad/NonDeO , H2O2 ] Diffusion factor = 1.00, rate = 4.91e+04, Keq = 1.19, at T = 338K.
+tetOOJ2(8)+H2O2(109) = tetOOH2(9)+HO2J(16)             1.840e-01 	  3.96 	  6.63 		0.0	0.0	0.0	//H_Abstraction exact:   [ O_rad/NonDeO , H2O2 ] Diffusion factor = 1.00, rate = 4.91e+04, Keq = 1.19, at T = 338K.
+HO2J(16)+HO2J(16) = H2O2(109)+O2(2)                    1.750e+10 	  0.00 	 -3.28 		0.0	0.0	0.0	//H_Abstraction exact:   [ Orad_O_H , O_rad/NonDeO ] Diffusion factor = 0.747, rate = 1.72e+12, Keq = 3.47e+21, at T = 338K.
+HO2J(16)+SPC(5) = H2O2(109)+C10H10(92)                 4.820e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ O_rad/NonDeO , C/H2/Nd_Csrad ] Diffusion factor = 0.133, rate = 6.39e+12, Keq = 5.23e+28, at T = 338K.
+HO2J(16)+SPC(17) = H2O2(109)+C10H10(92)                1.099e+13 	 -0.06 	  2.47 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ O_rad/NonDeO , C/H2/De_Csrad ] Diffusion factor = 0.974, rate = 1.91e+11, Keq = 4.62e+34, at T = 338K.
+HOJ(14)+HOJ(14) = H2O2(109)                            1.570e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//R_Recombination exact:   [ O_pri_rad , O_pri_rad ]
+tet(1)+HOJ(14) = SPC(17)+H2O(19)                       1.580e+07 	  1.90 	  0.16 		0.0	0.0	0.0	//H_Abstraction exact:   [ C/H2/NonDeC , O_pri_rad ] Diffusion factor = 0.906, rate = 7.20e+11, Keq = 1.30e+15, at T = 338K.
+tet(1)+HOJ(14) = SPC(5)+H2O(19)                        1.680e+13 	  0.00 	  2.59 		0.0	0.0	0.0	//H_Abstraction exact:   [ C/H2/Cb , O_pri_rad ] Diffusion factor = 0.956, rate = 3.39e+11, Keq = 1.15e+21, at T = 338K.
+HOJ(14)+SPC(17) = H2O(19)+C10H10(92)                   1.099e+13 	 -0.06 	  2.47 		0.0	0.0	0.0	//Disproportionation estimate: (Average:)  [ O_pri_rad , C/H2/De_Csrad ] Diffusion factor = 0.975, rate = 1.91e+11, Keq = 1.44e+55, at T = 338K.
+HO2J(16)+HOJ(14) = H2O(19)+O2(2)                       1.750e+10 	  0.00 	 -3.28 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ Orad_O_H , O_pri_rad ] Diffusion factor = 0.748, rate = 1.72e+12, Keq = 1.08e+42, at T = 338K.
+H2O2(109)+HOJ(14) = HO2J(16)+H2O(19)                   1.981e+00 	  3.63 	  3.81 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ H2O2 , O_pri_rad ] Diffusion factor = 1.00, rate = 1.02e+07, Keq = 3.11e+20, at T = 338K.
+HOJ(14)+tetOOH2(9) = H2O(19)+tetOOJ2(8)                9.904e-01 	  3.63 	  3.81 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ O_pri_rad , ROOH_sec ]
+HOJ(14)+tetOOH1(7) = H2O(19)+tetOOJ1(6)                9.904e-01 	  3.63 	  3.81 		0.0	0.0	0.0	//H_Abstraction estimate: (Average:)  [ O_pri_rad , O/H/NonDeO ]
+SPC(5)+HOJ(14) = C10H10(92)+H2O(19)                    2.410e+13 	  0.00 	  0.00 		0.0	0.0	0.0	//Disproportionation exact:   [ C/H2/Nd_Csrad , O_pri_rad ]
+C10H10(92)+H2O(19) = SPC(12)                           9.353e+02 	  2.88 	  48.86 		0.0	0.0	0.0	//1,3_Insertion_ROR estimate: (Average:)  [ Cd/H/Nd_Cd/H/De , H_OH ]
+C10H10(92)+H2O(19) = SPC(11)                           9.353e+02 	  2.88 	  48.86 		0.0	0.0	0.0	//1,3_Insertion_ROR estimate: (Average:)  [ Cd/H/De_Cd/H/Nd , H_OH ]
+
