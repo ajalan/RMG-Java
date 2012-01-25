@@ -1,0 +1,16 @@
+Unit:
+A: mol/cm3/s
+E: kcal/mol
+
+Reactions:
+ 
+// AIBN initiation reaction
+init -> tetJ1(3)+tetJ1(3)+C3H6						   2.00e-5 	 0.00 	 0.00 		0.0	0.0	0.0
+
+// Termination between ROO. peroxy radicals for both alpha and beta peroxy ROO.radicals
+tetOOJ1 + tetOOJ1 => tet_ket1 + tet_alc1 + O2
+tetOOJ2 + tetOOJ2 => tet_ket2 + tet_alc2 + O2
+
+// ROO + ROOH = ROOH + R=O + OH
+tetOOJ1 + tetOOH1 = tetOOH1 + tet_ket1 + HOJ
+

@@ -1,0 +1,7 @@
+Unit:
+A: mol/cm3/s
+E: kcal/mol
+
+Reactions:
+init -> tetJ1(3)+tetJ1(3)+C3H6                                             1.35e-5       0.00    0.00           0.0     0.0     0.0
+
